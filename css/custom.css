@@ -230,7 +230,7 @@ a.footer-link:focus {
 }
 
 .hexo {
-  fill: #03adfc;
+  fill: #5398AE;
   vertical-align: middle;
   padding-bottom: 4px;
 }
@@ -270,7 +270,8 @@ body.darkmode {
 }
 
 .trans {
-  animation: transitionPlay 0.7s;
+  /* animation: transitionPlay 0.7s; */
+  animation: transitionPlay 0;
 }
 
 @keyframes transitionPlay {
@@ -342,9 +343,26 @@ li {
   position: relative;    /* It's needed for setting position to absolute in the next rule. */
 }
 
-li::before {
-  content: '⬤';
-  position: absolute;
-  left: -0.8em;          /* Adjust this value so that it appears where you want. */
-  font-size: 0.4em;      /* Adjust this value so that it appears what size you want. */
+ol {
+	counter-reset:section;
+	list-style-type:none;
+	}
+ol li {
+	counter-increment:section;
+	}
+ol li:before {
+	content:counters(section, '.') '. ';
+  }
+
+.dinosaurs { counter-reset: item }
+.dinosaurs li {
+  display: block;
+  margin-top: -0.5em;
+}
+.dinosaurs li:before {
+  content: counter(item) ". ";
+  counter-increment: item;
+  width: 1em;
+  display: inline-block;
+  margin-top: -10em;
 }
