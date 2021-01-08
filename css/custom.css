@@ -330,7 +330,7 @@ body.darkmode {
 .post-thumb img {
   display: block;
   border: none;
-  border-radius: 10px;
+  /* border-radius: 10px; */
 }
 .post-content {
   margin-left: 210px
@@ -388,4 +388,13 @@ ol li:before {
 @media only screen and (max-device-width: 480px) {
     .mobile_device_480px{display: block;}
     .desktop {display: none;}
+}
+
+
+/* footer at bottom */
+.flex-wrapper {
+  display: flex;
+  min-height: 90.22vh;
+  flex-direction: column;
+  justify-content: space-between;
 }
